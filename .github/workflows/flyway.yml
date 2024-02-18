@@ -21,6 +21,7 @@ jobs:
       - name: Flyway Info
         run: |
           docker run --rm \
+            repair
             --volume "${{ github.workspace }}/${{ env.MIGRATION_LOCATION }}:/flyway/sql:ro" \
             "${{ env.DOCKER_IMAGE }}" \
             -url="${{ secrets.DB_BUILD_URL }}" \
@@ -28,7 +29,6 @@ jobs:
             -password="${{ secrets.DB_BUILD_PASSWORD }}" \
             -schemas="${{ env.SCHEMAS }}" \
             info
-            repair
       - name: Flyway Migrate
         run: |
           docker run --rm \
