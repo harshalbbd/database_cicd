@@ -1,0 +1,47 @@
+name: 'Database deployment CI/CD'
+ 
+on:
+  push:
+    branches:
+      - main
+      
+env:
+    DOCKER_IMAGE: redgate/flyway
+    SCHEMAS: dbo
+    MIGRATION_LOCATION: Flyway/migrations
+ 
+jobs:
+  Deploy:
+    name: Deploy
+    runs-on: ubuntu-20.04         
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.0
+          
+      - run: >-           
+          docker run --rm
+          --volume ${{ github.workspace }}/${{ env.MIGRATION_LOCATION }}:/flyway/sql:ro
+          "${{ env.DOCKER_IMAGE }}"
+          -licenseKey="${{ secrets.FLYWAY_LICENSE_KEY }}" 
+          -url="${{ secrets.DB_BUILD_URL }}"
+          -user="${{ secrets.DB_BUILD_USERNAME }}"
+          -password="${{ secrets.DB_BUILD_PASSWORD }}" 
+          info -schemas="${{ env.SCHEMAS }}"
+      - run: >-
+          docker run --rm
+          --volume ${{ github.workspace }}/${{ env.MIGRATION_LOCATION }}:/flyway/sql:ro
+          "${{ env.DOCKER_IMAGE }}"
+          -licenseKey="${{ secrets.FLYWAY_LICENSE_KEY }}" 
+          -url="${{ secrets.DB_BUILD_URL }}"
+          -user="${{ secrets.DB_BUILD_USERNAME }}"
+          -password="${{ secrets.DB_BUILD_PASSWORD }}" 
+          migrate -schemas="${{ env.SCHEMAS }}" -outOfOrder=true
+      - run: >-
+          docker run --rm
+          --volume ${{ github.workspace }}/${{ env.MIGRATION_LOCATION }}:/flyway/sql:ro
+          "${{ env.DOCKER_IMAGE }}"
+          -licenseKey="${{ secrets.FLYWAY_LICENSE_KEY }}" 
+          -url="${{ secrets.DB_BUILD_URL }}"
+          -user="${{ secrets.DB_BUILD_USERNAME }}"
+          -password="${{ secrets.DB_BUILD_PASSWORD }}"
+          info -schemas="${{ env.SCHEMAS }}"
