@@ -8,7 +8,7 @@ on:
 env:
   DOCKER_IMAGE: redgate/flyway
   SCHEMAS: dbo
-  MIGRATION_LOCATION: database_ev/migrations
+  MIGRATION_LOCATION: Evstation_Database/migrations
 
 jobs:
   Deploy:
