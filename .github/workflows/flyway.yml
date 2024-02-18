@@ -28,7 +28,7 @@ jobs:
             -password="${{ secrets.DB_BUILD_PASSWORD }}" \
             -schemas="${{ env.SCHEMAS }}" \
             info
-          
+            repair
       - name: Flyway Migrate
         run: |
           docker run --rm \
