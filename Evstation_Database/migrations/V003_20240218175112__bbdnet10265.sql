@@ -19,3 +19,7 @@ FOREIGN KEY (station_id) REFERENCES Station(station_id),
 FOREIGN KEY (user_id) REFERENCES Users(user_id),
 FOREIGN KEY (time_id) REFERENCES Timing(timing_id),
 FOREIGN KEY(slot_id) REFERENCES Slots(slot_id);
+
+ALTER TABLE Booking
+ADD CONSTRAINT CK_BookingDate
+CHECK (booking_date >= CAST(GETDATE() AS DATE));
