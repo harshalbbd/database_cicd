@@ -41,7 +41,7 @@ CREATE TABLE Slots (
 CREATE TABLE feedback (
   feedback_id int identity(1,1) primary key,
   feedback varchar(255) NOT NULL,
-  feedback_rating int NOT NULL check (rating>6),
+  feedback_rating int NOT NULL check (feedback_rating>6),
   station_id int NOT NULL,
   user_id int NOT NULL 
 );
