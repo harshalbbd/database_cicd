@@ -36,3 +36,17 @@ VALUES
 (3), (3),
 (4), (4),
 (5), (5);
+
+
+INSERT INTO Booking (booking_date, booking_status, slot_id, station_id, time_id, user_id)
+VALUES
+('2024-02-18', 'Confirmed', 1, 1, 10, 1),
+('2024-02-18', 'Confirmed', 2, 3, 18, 1),
+('2024-02-18', 'Confirmed', 3, 4, 20, 1),
+('2024-02-18', 'Confirmed', 4, 5, 23, 1),
+('2024-02-18', 'Confirmed', 5, 3, 3, 1),
+('2024-02-18', 'Confirmed', 6, 5, 7, 2),
+('2024-02-18', 'Confirmed', 7, 5, 9, 2),
+('2024-02-18', 'Confirmed', 8, 3, 2, 2),
+('2024-02-18', 'Confirmed', 9, 5, 5, 2),
+('2024-02-18', 'Confirmed', 10, 5, 6, 2);
