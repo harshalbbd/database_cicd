@@ -27,7 +27,6 @@ jobs:
             -user="${{ secrets.DB_BUILD_USERNAME }}" \
             -password="${{ secrets.DB_BUILD_PASSWORD }}" \
             -schemas="${{ env.SCHEMAS }}" \
-            repair
             info
           
       - name: Flyway Migrate
