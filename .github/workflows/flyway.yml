@@ -3,7 +3,7 @@ name: 'Database deployment CI/CD'
 on:
   push:
     branches:
-      - main
+      - master
       
 env:
     DOCKER_IMAGE: redgate/flyway
