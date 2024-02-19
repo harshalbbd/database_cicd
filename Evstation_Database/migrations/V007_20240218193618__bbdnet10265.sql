@@ -2,7 +2,7 @@
 
 CREATE or alter FUNCTION GetAvailableSlots
 (
-    @StationID INT,
+   -- @StationID INT,
     @Date DATE,
     @TimeSlot INT
 )
@@ -25,10 +25,10 @@ RETURN
                 Timing t ON b.time_id = t.timing_id
             WHERE 
                 b.booking_date = @Date
-                AND b.station_id = @StationID
+             --   AND b.station_id = @StationID
                 AND t.timing_id = @TimeSlot
         )
 );
 
 
---SELECT * FROM GetAvailableSlots( 1, '2024-02-18',10);
+--SELECT * FROM GetAvailableSlots('2024-02-18',10);
