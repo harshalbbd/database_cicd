@@ -20,9 +20,9 @@ CREATE TABLE Timing (
 
 CREATE TABLE Station (
   station_id int identity(1,1) Primary key,
-  station_name varchar(100) NOT NULL,
-  station_email varchar(255) NOT NULL,
-  station_pass varchar(100) NOT NULL,
+  station_name varchar(25) NOT NULL,
+  station_email varchar(25) NOT NULL,
+  station_pass varchar(25) NOT NULL,
   lattitude float NOT NULL,
   longitude float NOT NULL,
   open_time int NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE Slots (
 
 CREATE TABLE feedback (
   feedback_id int identity(1,1) primary key,
-  feedback varchar(255) NOT NULL,
+  feedback varchar(100) NOT NULL,
   feedback_rating int NOT NULL check (feedback_rating>6),
   station_id int NOT NULL,
   user_id int NOT NULL 
@@ -52,7 +52,7 @@ CREATE TABLE feedback (
 CREATE TABLE Booking(
   booking_id int identity(1,1)primary key,
   booking_date date NOT NULL,
-  booking_status varchar(255) NOT NULL,
+  booking_status varchar(25) NOT NULL,
   slot_id int NOT NULL,
   station_id int NOT NULL,
   time_id int NOT NULL,
