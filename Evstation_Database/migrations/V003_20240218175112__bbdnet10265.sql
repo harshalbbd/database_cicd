@@ -23,3 +23,6 @@ FOREIGN KEY(slot_id) REFERENCES Slots(slot_id);
 ALTER TABLE Booking
 ADD CONSTRAINT CK_BookingDate
 CHECK (booking_date >= CAST(GETDATE() AS DATE));
+
+ALTER TABLE feedback
+ADD CONSTRAINT feedback_update CHECK (feedback_rating < 6);

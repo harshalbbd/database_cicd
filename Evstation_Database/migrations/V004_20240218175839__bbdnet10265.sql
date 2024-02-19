@@ -50,3 +50,18 @@ VALUES
 ('2024-02-18', 'Confirmed', 8, 3, 2, 2),
 ('2024-02-18', 'Confirmed', 9, 5, 5, 2),
 ('2024-02-18', 'Confirmed', 10, 5, 6, 2);
+
+
+
+INSERT INTO feedback (feedback, feedback_rating, station_id, user_id)
+VALUES
+('Great service!', 2, 1, 1),
+('Could be better', 5, 2, 2),
+('Excellent experience', 5, 3, 3),
+('Average', 5, 1, 4),
+('Fantastic!', 3, 2, 5),
+('Poor service', 2, 3, 6),
+('Amazing!', 1, 1, 7),
+('Could improve', 0, 2, 8),
+('Satisfactory', 2, 3, 9),
+('Best service ever', 3, 1, 10);
