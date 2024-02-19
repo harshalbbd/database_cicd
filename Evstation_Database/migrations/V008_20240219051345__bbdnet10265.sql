@@ -1,6 +1,6 @@
 --create a view for show the user, station information using feedback table	
     
-    CREATE VIEW User_And_Station_info_using_feedback_View
+    ALTER VIEW User_And_Station_info_using_feedback_View
 AS
 SELECT
     u.user_id,
@@ -14,9 +14,9 @@ SELECT
     s.station_name
 FROM
     Users u
-JOIN
+INNER JOIN
     feedback f ON u.user_id = f.user_id
-JOIN
+INNER JOIN
     Station s ON f.station_id = s.station_id;
 
 -- select * from User_And_Station_info_using_feedback_View;
