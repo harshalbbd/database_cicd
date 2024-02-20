@@ -20,8 +20,8 @@ VALUES
 ('Station D', 'stationD@example.com', 'password123', 52.5200, 13.4050, 10, 22),
 ('Station E', 'stationE@example.com', 'password456', 48.8566, 2.3522, 0, 24);
 
-insert into Timing(start_time,end_time)
-values
+INSERT INTO Timing(start_time,end_time)
+VALUES
 (0,1),(1,2),(2,3),(3,4),(4,5),(5,6),
 (6,7),(7,8),(8,9),(9,10),(10,11),
 (11,12),(12,13),(13,14),(14,15),
