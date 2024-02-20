@@ -2,7 +2,6 @@
 
 CREATE or alter FUNCTION GetAvailableSlots
 (
-   -- @StationID INT,
     @Date DATE,
     @TimeSlot INT
 )
@@ -25,7 +24,6 @@ RETURN
                 Timing t ON b.time_id = t.timing_id
             WHERE 
                 b.booking_date = @Date
-             --   AND b.station_id = @StationID
                 AND t.timing_id = @TimeSlot
         )
 );
