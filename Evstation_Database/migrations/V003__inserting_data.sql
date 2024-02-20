@@ -90,7 +90,5 @@ VALUES
 
 INSERT INTO SlotsBookings (StatusID, SlotBookingDate, SlotID, StationID, TimeSlotID, UserID) VALUES
 (1, '2024-02-20', 1, 1, 10, 1),
-(2, '2024-02-21', 2, 1, 17, 2),
-(1, '2024-02-22', 6, 3, 19, 3),
-(2, '2024-02-22', 4, 2, 7, 4),
+(1, '2024-02-21', 2, 1, 17, 2),
 (1, '2024-02-23', 7, 4, 9, 5);
