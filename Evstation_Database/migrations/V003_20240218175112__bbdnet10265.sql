@@ -25,4 +25,4 @@ ADD CONSTRAINT CK_BookingDate
 CHECK (booking_date >= CAST(GETDATE() AS DATE));
 
 ALTER TABLE feedback
-ADD CONSTRAINT feedback_update CHECK (feedback_rating < 6);
+ADD CONSTRAINT feedback_update CHECK (feedback_rating < 6 AND feedback_rating>0);
