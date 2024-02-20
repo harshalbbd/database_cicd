@@ -47,7 +47,7 @@ CREATE TABLE ChargingStationSlots (
 
 CREATE TABLE StationFeedbacks (
   FeedbackID INT IDENTITY(1,1) PRIMARY KEY,
-  UserID INT NOT NULL 
+  UserID INT NOT NULL,
   Description VARCHAR(150),
   Rating INT check (Rating<=5 AND Rating>0 ),
   StationID INT NOT NULL,
