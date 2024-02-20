@@ -1,6 +1,6 @@
 --create a view for show the user, station information using feedback table	
     
-    ALTER VIEW User_And_Station_info_using_feedback_View
+ALTER VIEW User_And_Station_info_using_feedback_View
 AS
 SELECT
     u.user_id,
