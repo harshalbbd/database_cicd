@@ -1,0 +1,28 @@
+ALTER TABLE UserContactDetails
+ADD CONSTRAINT FK_ON_DETAILS
+FOREIGN KEY (UserID) REFERENCES Users(UserID);
+
+ALTER TABLE ChargingStationSlots
+ADD CONSTRAINT FK_ON_SLOTS
+FOREIGN KEY (StationID) REFERENCES ChargingStations(StationID);
+
+ALTER TABLE StationFeedbacks
+ADD CONSTRAINT FK_on_feedback
+FOREIGN KEY (StationID) REFERENCES ChargingStations(StationID),
+FOREIGN KEY (UserID) REFERENCES Users(UserID) ;
+
+ALTER TABLE SlotsBookings
+ADD CONSTRAINT FK_on_SLOTBOOKING
+FOREIGN KEY(StatusID) REFERENCES BookingStatus(StatusID)
+
+ALTER TABLE SlotsBookings
+ADD CONSTRAINT FK_on_booking
+FOREIGN KEY (StationID) REFERENCES ChargingStations(StationID),
+FOREIGN KEY (UserID) REFERENCES Users(UserID),
+FOREIGN KEY (TimeSlotID) REFERENCES BookingTimeSlots(TimeSlotID),
+FOREIGN KEY(SlotID) REFERENCES ChargingStationSlots(SlotID);
+
+ALTER TABLE SlotsBookings
+ADD CONSTRAINT CK_BookingDate
+CHECK (SlotBookingDate >=CAST(GETDATE() AS DATE));
+
