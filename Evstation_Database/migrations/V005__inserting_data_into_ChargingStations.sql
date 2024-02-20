@@ -6,3 +6,5 @@ VALUES
 ('Station 4', 'station4@example.com', 'password4', 48.8566, 2.3522, '07:00:00', '17:00:00', 11.00),
 ('Station 5', 'station5@example.com', 'password5', 41.8781, -87.6298, '08:30:00', '18:30:00', 10.50);
 
+
+
