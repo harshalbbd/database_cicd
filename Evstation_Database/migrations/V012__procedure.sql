@@ -1,23 +1,20 @@
---create procedure for getting the station bookings
-
-
 CREATE PROCEDURE GetStationBookings
     @StationID INT
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT b.Booking_ID AS BookingID, 
+    SELECT b.BookingID AS BookingID, 
            b.SlotBookingDate, 
            bs.Status AS Status, -- Include Status from BookingStatus table
            b.SlotID AS slot_id,
            u.UserID AS user_id, 
-           u.FirstName AS user_Fname, 
-           u.LastName AS user_Lname, 
-           u.EmailID AS user_email, 
-           uc.MobileNumber AS user_Mno,
-           t.StartTime AS start_time, 
-           t.EndTime AS end_time
+           u.FirstName AS FirstName, 
+           u.LastName AS LastName, 
+           u.EmailID AS EmailID, 
+           uc.MobileNumber AS MobileNumber,
+           t.StartTime AS StartTime, 
+           t.EndTime AS EndTime
     FROM SlotsBookings b
     INNER JOIN Users u ON b.UserID = u.UserID
     INNER JOIN ChargingStationSlots s ON b.SlotID = s.SlotID
