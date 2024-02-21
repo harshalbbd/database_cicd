@@ -7,6 +7,12 @@ The EV station project is focused on online booking for user on ev station.
 ![App Screenshot](ERDiagram.png)
 
 
+
+### JIRA Board
+
+https://vinod-mali.atlassian.net/jira/core/projects/ES/board
+
+
 ### Steps To Create RDS Using Terraform
 - Download Aws Cli and terraform and add the path into system env variables
 - Create I AM user with permission of Administrator access
