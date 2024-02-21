@@ -4,7 +4,7 @@ The EV station project is focused on online booking for user on ev station.
 
 
 ## ER Diagram
-![App Screenshot](erd.png)
+![App Screenshot](ERDiagram.png)
 
 
 ### Steps To Create RDS Using Terraform
